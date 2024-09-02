@@ -1,0 +1,21 @@
+SELECT DISTINCT salary
+FROM employees
+ORDER BY salary DESC
+LIMIT 1 OFFSET n-1;
+
+Alternative 1
+
+SELECT DISTINCT salary
+FROM employees
+ORDER BY salary DESC
+LIMIT 1 OFFSET 2;
+
+Alternative 2
+
+SELECT salary
+FROM employees e1
+WHERE n-1 = (
+    SELECT COUNT(DISTINCT salary)
+    FROM employees e2
+    WHERE e2.salary > e1.salary
+);
