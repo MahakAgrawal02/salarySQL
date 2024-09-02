@@ -1,0 +1,1 @@
+Given an employees table with columns id(int), name(string) and salary(int). Write a SQL query to find the nth highest salary. If there is no nth highest salary, the result should be NULL.
